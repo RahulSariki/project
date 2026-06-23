@@ -7,6 +7,7 @@ import com.learn.AuthService.dto.AuthResponse;
 import com.learn.AuthService.dto.LoginRequest;
 import com.learn.AuthService.dto.RegisterRequest;
 import com.learn.AuthService.dto.UserResponse;
+import com.learn.AuthService.entity.Role;
 import com.learn.AuthService.entity.User;
 import com.learn.AuthService.repository.UserRepository;
 
@@ -24,6 +25,7 @@ public class AuthService {
     }
 
     public UserResponse register(RegisterRequest request) {
+    	
         User user = User.builder()
                 .name(request.getName())
                 .email(request.getEmail())
@@ -46,5 +48,6 @@ public class AuthService {
         String token = jwt.token(user);
         return new AuthResponse(token, user.getId(), user.getRole().name());
     }
+    
 
 }

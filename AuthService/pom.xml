@@ -4,10 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.1.0</version>
-		<relativePath/> </parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.5</version>
+    <relativePath/>
+</parent>
+
+<properties>
+    <java.version>21</java.version>
+    <spring-cloud.version>2023.0.3</spring-cloud.version>
+</properties>
 	
 	<groupId>com.bookmyvenue</groupId>
 	<artifactId>Auth_Service</artifactId>
@@ -15,10 +21,7 @@
 	<name>Auth_Service</name>
 	<description>Authentication Service for STOP-N-REST</description>
 
-	<properties>
-		<java.version>21</java.version>
-		<spring-cloud.version>2025.1.2</spring-cloud.version>
-	</properties>
+	
 
 	<dependencies>
 		<dependency>
@@ -74,6 +77,11 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+    <version>2.5.0</version>
+</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

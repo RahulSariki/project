@@ -27,13 +27,13 @@ public class NotificationController {
 	}
 	
 	@PostMapping("/send")
-    public ResponseEntity<Notification> sendNotification(@Valid @RequestBody NotificationRequest request) {
+    public ResponseEntity<?> sendNotification(@Valid @RequestBody NotificationRequest request) {
 		
         return ResponseEntity.ok(service.sendNotification(request));
     }
 
     @GetMapping("/customer/{id}")
-    public ResponseEntity<List<Notification>> getNotificationsByCustomer(@PathVariable("id") Long customerId) {
+    public ResponseEntity<List<?>> getNotificationsByCustomer(@PathVariable("id") Long customerId) {
         return ResponseEntity.ok(service.getNotificationsByCustomer(customerId));
     }
 }
